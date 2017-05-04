@@ -1,0 +1,23 @@
+<form [ngFormModel]="coolForm">
+  
+<p>Write about a famous ...</p>
+  <input ngControl="search" placeholder="Name">
+	<input ngControl="search2" placeholder="Surname">
+</form>
+		
+<div *ngFor="#artist of resultF" style="clear:both;">
+  <p>{{artist.name}}</p>
+  <div *ngFor="#img of artist.images" style="float:left;">
+    <img src="{{img.url}}" style="height:100px;"/>
+  </div>  
+</div>
+
+<div style="clear:both;"></div>
+ 
+<h3>Favorite</h3> 
+<div *ngFor="#artist of searchInit | async" style="clear:both;">
+  <p>{{artist.name}}</p>
+  <div *ngFor="#img of artist.images" style="float:left;">
+    <img src="{{img.url}}" style="height:50px;"/>
+  </div>  
+</div>
